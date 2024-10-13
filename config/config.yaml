@@ -1,0 +1,27 @@
+# General configuration settings for IngreCheck
+
+app:
+  name: "IngreCheck"
+  environment: "development"  # Can be 'development', 'production', or 'staging'
+  debug: true                 # Set to false in production
+  log_level: "info"           # Logging level, can be 'debug', 'info', 'warning', 'error'
+
+server:
+  host: "0.0.0.0"             # Server host (use 127.0.0.1 for local, 0.0.0.0 for public)
+  port: 8000                  # API server port
+
+ocr:
+  google_vision_credentials: "config/credentials.json"   # Path to the Google Vision credentials JSON file
+  tesseract_path: "/usr/bin/tesseract"                   # Path to Tesseract binary (optional, depends on setup)
+
+# Settings for file handling
+storage:
+  temp_image_folder: "data/test/images"                       # Directory to store temporary images for OCR processing
+
+# Dietary analyzer settings
+dietary_analyzer:
+  restrictions_folder: "data/dietary_restrictions/pdfs"   # Directory containing dietary restrictions PDFs
+
+# Open AI key for RAG nad Embeddings
+openai:
+  api_key: "<enter_api_key>"
